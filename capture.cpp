@@ -1,8 +1,8 @@
 #include <iostream>
-#include "../include/NBioAPI.h"
+#include "include/NBioAPI.h"
 #include <fstream>
 #include <time.h>
-#include <string>
+#include <string.h>
 
 // Defining variables
 NBioAPI_HANDLE g_hBSP;
@@ -26,7 +26,7 @@ int main(){
 	// Initialize device
 	if ( NBioAPI_Init(&g_hBSP) != NBioAPIERROR_NONE ){
 		std::cout<<"Init Failed";
-		return;
+		return 0;
 		}
 	else{
 	  // Open device, device auto detect
@@ -36,7 +36,7 @@ int main(){
 		// Open device
 		if ( ret != NBioAPIERROR_NONE ){
 			std::cout<<"Device open failed";
-			return;
+			return 0;
 			}
 		else{
 		  std::cout<<"Device successfully initiated.\nPlace finger on sensor.\n";
@@ -89,7 +89,7 @@ int main(){
 			std::cout<<"FingerPrint saved.";
 		}
 	}
-	return;
+	return 0;
 }
 
 	
